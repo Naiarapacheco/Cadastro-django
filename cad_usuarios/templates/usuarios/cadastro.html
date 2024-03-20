@@ -1,0 +1,25 @@
+{% extends 'usuarios/home.html'%}
+
+{% block content %}
+
+<div class="container mt-5">
+    
+    <h1 class="text-normal mt-5 mb-5 text-center" style="font-size: 1.4rem;">Cadastro de Usuários</h1>
+
+    <form action="{% url 'listagem_usuarios' %}" method="POST">
+        {% csrf_token %}
+        <div class="container" style="text-align: center;">
+
+            <label>Nome:</label>
+            <input type="text" class="form-control" name="nome">
+
+            <label>Idade:</label>
+            <input type="text" class="form-control" name="idade">
+
+            <button class="btn btn-outline-secondary mt-5">Acessar</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock content %}
